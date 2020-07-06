@@ -18,38 +18,67 @@ class App extends Component {
     };
     this.initialState = this.state;
   }
+  calculate_age = (dob1) => {
+    var today = new Date();
+    var birthDate = new Date(dob1);  // create a date object directly from `dob1` argument
+    var age_now = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      age_now--;
+    }
+    var age = null
+    // console.log(age_now);
+
+    if (age_now > 5 && age_now < 80) {
+      age = true;
+    }
+    else {
+      age = false;
+    }
+    // console.log(age)
+    return age;
+  }
 
   handleFormValidation() {
     const { studName, dob, division, class1, gender } = this.state;
     let formErrors = {};
     let formIsValid = true;
-
-    // Name
+    let age_latest = null;
+    // Name     
     if (!studName) {
       formIsValid = false;
-      formErrors["studNameErr"] = "Name is required.";
+      formErrors["studNameErr"] = "Name is required";
     }
-    else{
-      var v=/^[a-zA-Z\s]+$/;
-      // /^[a-zA-Z]+$/;
-      if(!v.test(studName)){
-        formIsValid = false;
-        formErrors["studNameErr"] = "only letters and spaces";
-
-      }
+    else {
+        var pattern = /^[a-zA-Z\s]+$/;
+        
+        if (!pattern.test(studName)) {
+            formIsValid = false;
+            formErrors["studNameErr"] = "Invalid Name";
+        }
     }
+    
+    
+    // DOB   
 
-    // DOB
+    
     if (!dob) {
       formIsValid = false;
       formErrors["dobErr"] = "Date of birth is required.";
-    } else {
-      var pattern = /^(0[1-9]|1[0-9]|2[0-9]|3[0-1])\/(0[1-9]|1[0-2])\/([0-9]{4})$/;
-      if (!pattern.test(dob)) {
+    }
+    else {
+       var pattern = /^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/;
+      age_latest = this.calculate_age(dob);
+      
+      if (!pattern.test(dob)&& age_latest===false) {
         formIsValid = false;
-        formErrors["dobErr"] = "Invalid date of birth";
+        formErrors["dobErr"] = "Invalid date of birth the age must be between 5 and 100 ";
+
       }
     }
+   
+
+
 
     //  Division
     if (division === "" || division === "select") {
