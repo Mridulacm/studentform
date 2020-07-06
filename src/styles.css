@@ -1,0 +1,120 @@
+
+
+
+  .formDiv {    
+    /* padding: 21px;    
+     border-radius: 5px;    
+     background-color:  #258ea6;    */
+     height: 130vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #bf00ff	;
+    background: -webkit-linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);
+    background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);
+    }    
+  label {
+    font-size: 0.9em;
+    margin-bottom: 0.25em;
+    color: #222;
+    font-weight: lighter;
+  }
+  
+  input {
+    padding: 10px 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 5px solid #cfcfcf;
+  }
+  h1 {
+    text-align: center;
+    width: 100%;
+    color: #111;
+    font-weight: bolder;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+  
+  input::placeholder {
+    font-size: 1.23em;
+    font-weight: lighter;
+    color: #999;
+  }
+  .submit {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .submit button {
+    background-color: white;
+    color: black;
+    border: 2px solid #fff;
+    width: 50%;
+    margin-top: 1em;
+    padding: 8px 0px;
+    font-size: 1em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 0.25em;
+  }
+  
+  
+  /* form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  } */
+  
+  /* h1 {
+    text-align: center;
+    width: 100%;
+    color: #111;
+    font-weight: lighter;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  } */
+      
+  input[type=text], select     
+  {    
+    width: 100%;    
+    padding: 12px 20px;    
+    margin: 8px 0;    
+    display: inline-block;    
+    border: 1px solid  #258ea6;    
+    border-radius: 4px;    
+    box-sizing: border-box;    
+  }    
+  .submit {
+    width: 100%;
+  
+     align-items: center; 
+    display: flex;
+    flex-direction: column;
+    
+  }
+  input[type=submit] {    
+    width: 100%;    
+    background-color: #4CAF50;    
+  color:white ; 
+    
+     
+    padding: 14px 20px;    
+    margin: 8px 0;    
+    border: none;    
+    border-radius: 4px;    
+    cursor: pointer;   
+  
+  }    
+      
+  input[type=submit]:hover {    
+    background-color: #45a049;    
+  }    
+  .showError{    
+    border-color: #a94442 !important;    
+    color: #a94442 !important;    
+    margin-bottom: 15px;    
+  }
